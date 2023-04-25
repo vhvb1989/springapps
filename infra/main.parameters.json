@@ -13,6 +13,9 @@
     },
     "useAPIM": {
       "value": "${USE_APIM=false}"
+    },
+    "relativePath": {
+      "value": "${AZURE_RELATIVE_PATH=<default>}"
     }
   }
 }

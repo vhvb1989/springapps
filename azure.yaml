@@ -12,4 +12,4 @@ services:
   api:
     project: ./src/api
     language: java
-    host: appservice
+    host: springapp
