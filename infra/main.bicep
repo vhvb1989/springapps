@@ -24,6 +24,7 @@ param logAnalyticsName string = ''
 param resourceGroupName string = ''
 param webServiceName string = ''
 param apimServiceName string = ''
+param relativePath string
 
 @description('Flag to use Azure API Management to mediate the calls between the Web frontend and the backend API')
 param useAPIM bool = false
@@ -75,15 +76,7 @@ module api './app/api.bicep' = {
     name: !empty(apiServiceName) ? apiServiceName : '${abbrs.webSitesAppService}api-${resourceToken}'
     location: location
     tags: tags
-    applicationInsightsName: monitoring.outputs.applicationInsightsName
-    appServicePlanId: appServicePlan.outputs.id
-    keyVaultName: keyVault.outputs.name
-    allowedOrigins: [ web.outputs.SERVICE_WEB_URI ]
-    appSettings: {
-      AZURE_COSMOS_CONNECTION_STRING_KEY: cosmos.outputs.connectionStringKey
-      AZURE_COSMOS_DATABASE_NAME: cosmos.outputs.databaseName
-      AZURE_COSMOS_ENDPOINT: cosmos.outputs.endpoint
-    }
+    relativePath: relativePath
   }
 }
 
