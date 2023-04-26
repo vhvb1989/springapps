@@ -13,6 +13,9 @@
     },
     "useAPIM": {
       "value": "${USE_APIM=false}"
+    },
+    "relativePath": {
+      "value": "${SERVICE_TODO_API_RELATIVE_PATH=<default>}"
     }
   }
 }
