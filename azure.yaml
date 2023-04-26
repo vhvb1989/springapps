@@ -9,7 +9,7 @@ services:
     dist: build
     language: js
     host: appservice
-  api:
+  todo-api:
     project: ./src/api
     language: java
-    host: appservice
+    host: springapp
